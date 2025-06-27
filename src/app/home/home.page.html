@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calculadora Científica</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/history">Historial</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-input class="result-screen" readonly value="{{ display }}"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3"><ion-button expand="block" (click)="clear()">C</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="deleteLast()">⌫</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('%')">%</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('/')">/</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3"><ion-button expand="block" (click)="append('7')">7</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('8')">8</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('9')">9</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('*')">×</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3"><ion-button expand="block" (click)="append('4')">4</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('5')">5</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('6')">6</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('-')">-</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3"><ion-button expand="block" (click)="append('1')">1</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('2')">2</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('3')">3</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('+')">+</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3"><ion-button expand="block" (click)="append('0')">0</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('.')">.</ion-button></ion-col>
+      <ion-col size="6"><ion-button expand="block" (click)="calculate()">=</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3"><ion-button expand="block" (click)="append('sin(')">sin</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('cos(')">cos</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('tan(')">tan</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('sqrt(')">√</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3"><ion-button expand="block" (click)="append('log(')">log</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('^')">^</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append('(')">(</ion-button></ion-col>
+      <ion-col size="3"><ion-button expand="block" (click)="append(')')">)</ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
+</ion-content>

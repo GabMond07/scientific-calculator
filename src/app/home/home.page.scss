@@ -1,0 +1,19 @@
+.result-screen {
+  font-size: 2em;
+  text-align: right;
+  padding: 10px;
+  background-color: #161616;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+ion-button {
+  --border-radius: 10px;
+  font-size: 1.2em;
+  height: 60px;
+}
+
+ion-grid {
+  max-width: 600px;
+  margin: auto;
+}
